@@ -1,0 +1,182 @@
+
+    /* Importing Google Fonts - Poppins */
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+
+    /* Modal Styles */
+    .custom-modal {
+      display: none; /* Hidden by default */
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+      justify-content: center;
+      align-items: center;
+      z-index: 1000; /* Ensures modal appears above other content */
+    }
+
+    .custom-modal-content {
+      background-color: rgb(33, 33, 33);
+      padding: 25px 30px;
+      border-radius: 5px;
+      width: 700px;
+      box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
+    }
+
+    .custom-modal-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .custom-modal-header .close {
+      font-size: 1.5em;
+      cursor: pointer;
+    }
+
+    .custom-title {
+      font-size: 25px;
+      font-weight: 500;
+      position: relative;
+    }
+
+    .custom-title::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      height: 3px;
+      width: 30px;
+      border-radius: 5px;
+      background: linear-gradient(135deg, #71b7e6, #9b59b6);
+    }
+
+    .custom-content form .custom-user-details {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      margin: 20px 0 12px 0;
+    }
+
+    .custom-user-details .custom-input-box {
+      margin-bottom: 15px;
+      width: calc(100% / 2 - 20px);
+    }
+
+    .custom-input-box span.custom-details {
+      display: block;
+      font-weight: 500;
+      margin-bottom: 5px;
+    }
+
+    .custom-user-details .custom-input-box input {
+      height: 45px;
+      width: 100%;
+      outline: none;
+      font-size: 16px;
+      border-radius: 5px;
+      padding-left: 15px;
+      border: 1px solid #ccc;
+      border-bottom-width: 2px;
+      transition: all 0.3s ease;
+    }
+
+    .custom-user-details .custom-input-box input:focus,
+    .custom-user-details .custom-input-box input:valid {
+      border-color: #9b59b6;
+    }
+
+    .custom-gender-details .custom-gender-title {
+      font-size: 20px;
+      font-weight: 500;
+    }
+
+    .custom-gender-details .custom-category {
+      display: flex;
+      width: 80%;
+      margin: 14px 0;
+      justify-content: space-between;
+    }
+
+    .custom-gender-details .custom-category label {
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+    }
+
+    .custom-gender-details .custom-category label .custom-dot {
+      height: 18px;
+      width: 18px;
+      border-radius: 50%;
+      margin-right: 10px;
+      background: #d9d9d9;
+      border: 5px solid transparent;
+      transition: all 0.3s ease;
+    }
+
+    #dot-1:checked~.custom-gender-details .custom-category label .custom-one,
+    #dot-2:checked~.custom-gender-details .custom-category label .custom-two,
+    #dot-3:checked~.custom-gender-details .custom-category label .custom-three {
+      background: #9b59b6;
+      border-color: #d9d9d9;
+    }
+
+    form input[type="radio"] {
+      display: none;
+    }
+
+    .custom-button {
+      height: 45px;
+      margin: 35px 0;
+    }
+
+    .custom-button input {
+      height: 100%;
+      width: 100%;
+      border-radius: 5px;
+      border: none;
+      color: #fff;
+      font-size: 18px;
+      font-weight: 500;
+      letter-spacing: 1px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      background: linear-gradient(135deg, #71b7e6, #9b59b6);
+    }
+
+    .custom-button input:hover {
+      background: linear-gradient(-135deg, #71b7e6, #9b59b6);
+    }
+
+    /* Responsive media query code for mobile devices */
+    @media(max-width: 584px) {
+      .custom-modal-content {
+        width: 100%;
+      }
+
+      form .custom-user-details .custom-input-box {
+        margin-bottom: 15px;
+        width: 100%;
+      }
+
+      form .custom-category {
+        width: 100%;
+      }
+
+      .custom-content form .custom-user-details {
+        max-height: 300px;
+        overflow-y: scroll;
+      }
+
+      .custom-user-details::-webkit-scrollbar {
+        width: 5px;
+      }
+    }
+
+    /* Responsive media query code for mobile devices */
+    @media(max-width: 459px) {
+      .custom-modal-content .custom-gender-details .custom-category {
+        flex-direction: column;
+      }
+    }

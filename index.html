@@ -115,6 +115,7 @@
 <link rel="stylesheet" media="all" href="/core/assets/vendor/jquery.ui/themes/base/core.css?spit0t" />
 <link rel="stylesheet" media="all" href="/core/assets/vendor/jquery.ui/themes/base/autocomplete.css?spit0t" />
 <link rel="stylesheet" media="all" href="css/menu.css" />
+<link rel="stylesheet" media="all" href="css/regform.css" />
 <link rel="stylesheet" media="all" href="/core/assets/vendor/jquery.ui/themes/base/controlgroup.css?spit0t" />
 <link rel="stylesheet" media="all" href="/core/assets/vendor/jquery.ui/themes/base/checkboxradio.css?spit0t" />
 <link rel="stylesheet" media="all" href="/core/assets/vendor/jquery.ui/themes/base/resizable.css?spit0t" />
@@ -441,10 +442,83 @@
       </div>
 <div class="hero-btn-group">
   <div class="hero-cta">
-    <a href="/tickets">REGISTER</a>
+    <a href="javascript:void(0);" onclick="openModal()">Register</a>
     <a href="#"><span class="gradient-colored-text">BROCHURE</span></a>
   </div>
   <div class="hero-cta-with-icon">
+  </div>
+</div>
+<div class="custom-modal" id="registrationModal">
+  <div class="custom-modal-content">
+    <div class="custom-modal-header">
+      <span class="close-button" onclick="closeModal()">&times;</span>
+    </div>
+    <div class="custom-title">Registration</div>
+    <div class="custom-content">
+      <!-- Registration form -->
+      <form action="#">
+        <div class="custom-user-details">
+          <!-- Input for Full Name -->
+          <div class="custom-input-box">
+            <span class="custom-details">Full Name</span>
+            <input type="text" placeholder="Enter your name" required>
+          </div>
+          <!-- Input for Username -->
+          <div class="custom-input-box">
+            <span class="custom-details">Username</span>
+            <input type="text" placeholder="Enter your username" required>
+          </div>
+          <!-- Input for Email -->
+          <div class="custom-input-box">
+            <span class="custom-details">Email</span>
+            <input type="text" placeholder="Enter your email" required>
+          </div>
+          <!-- Input for Phone Number -->
+          <div class="custom-input-box">
+            <span class="custom-details">Phone Number</span>
+            <input type="text" placeholder="Enter your number" required>
+          </div>
+          <!-- Input for Password -->
+          <div class="custom-input-box">
+            <span class="custom-details">Password</span>
+            <input type="text" placeholder="Enter your password" required>
+          </div>
+          <!-- Input for Confirm Password -->
+          <div class="custom-input-box">
+            <span class="custom-details">Confirm Password</span>
+            <input type="text" placeholder="Confirm your password" required>
+          </div>
+        </div>
+        <div class="custom-gender-details">
+          <!-- Radio buttons for gender selection -->
+          <input type="radio" name="gender" id="dot-1">
+          <input type="radio" name="gender" id="dot-2">
+          <input type="radio" name="gender" id="dot-3">
+          <span class="custom-gender-title">Gender</span>
+          <div class="custom-category">
+            <!-- Label for Male -->
+            <label for="dot-1">
+              <span class="custom-dot custom-one"></span>
+              <span class="custom-gender">Male</span>
+            </label>
+            <!-- Label for Female -->
+            <label for="dot-2">
+              <span class="custom-dot custom-two"></span>
+              <span class="custom-gender">Female</span>
+            </label>
+            <!-- Label for Prefer not to say -->
+            <label for="dot-3">
+              <span class="custom-dot custom-three"></span>
+              <span class="custom-gender">Prefer not to say</span>
+            </label>
+          </div>
+        </div>
+        <!-- Submit button -->
+        <div class="custom-button">
+          <input type="submit" value="Register">
+        </div>
+      </form>
+    </div>
   </div>
 </div>
           <div class="icon-and-organised">
@@ -3344,6 +3418,26 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 });
+
+</script>
+<script>
+function openModal() {
+      document.getElementById("registrationModal").style.display = "flex";
+    }
+
+    // Close the modal
+    function closeModal() {
+      console.log('Hello');
+      document.getElementById("registrationModal").style.display = "none";
+    }
+
+    // Close modal if clicked outside of it
+    window.onclick = function(event) {
+      var modal = document.getElementById("registrationModal");
+      if (event.target == modal) {
+        closeModal();
+      }
+    }
 </script>
 
   </body>
